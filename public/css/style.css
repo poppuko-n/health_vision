@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+/* フォント */
+.font_english {
+    font-family: "EB Garamond", serif;
+    font-style: normal;
+}
+
+.font_japanese {
+    font-family: "YuMincho";
+    font-style: normal;
+}
+
+/* フッター */
+.fotter {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    z-index:3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.health_vision {
+    background-image: url(../images/health_vision_icon.png);
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.fotter a {
+    font-size: 28px;
+    letter-spacing: 5px;
+    color: grey;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.fotter a:hover {
+    color: black;
+    transition: .5s;
+}
+
+.home_logo {
+    background-image: url(../images/icon_sub_home.svg);
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    opacity: .6;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.home_logo:hover {
+    background-color: black;
+    transition: .5s;
+    width: 42px;
+    height: 42px;
+}
+
+
+.add_logo {
+    background-image: url(../images/icon_sub_add.svg);
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    opacity: .6;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.add_logo:hover {
+    background-color: black;
+    transition: .5s;
+    width: 42px;
+    height: 42px;
+}
+
+/* 背景 */
+.index_back {
+    background-image: url(../images/background_sunset.jpg);
+    background-position: left;
+    background-size: cover;
+    width: 100%;
+    height: 728px;
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+.home_back {
+    background-image: url(../images/background_runnnig.webp);
+    background-position: left;
+    background-size: cover;
+    width: 100%;
+    height: 728px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+
+.filter {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 728px;
+    opacity: .2;
+    z-index: 1;
+} 
+
+/* ページ説明 */
+.page_exprotion {
+    width: 330px;
+    padding: 5px;
+    background-color: white;
+    opacity: .8;
+    top: 50px;
+    left: 0;
+    margin-left: 10px;
+    position: absolute;
+    border-left: 6px solid grey;
+    z-index: 3;
+}
+
+.page_title {
+    font-size: 35px;
+    letter-spacing: 2px;
+    color: black;
+    font-style: normal;
+}
+
+.page_title span {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: gray;
+}
+
+/* ロゴ装飾 */
+.flexbox {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    flex-wrap: wrap;
+    height: 650px;
+    width: 700px;
+    gap: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+    margin: 10px 0;
+}
+
+.cotainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 330px;
+    padding: 10px 0;
+    background-color: white;
+    opacity: .8;
+    border-radius: 10px;
+}
+
+.container:hover {
+    transition: .5s;
+    filter: brightness(90%);
+}
+
+.circle {
+    background-color:white;
+    border: black 1px solid;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+img {
+    background-color: white;
+    width: 45px;
+    height: auto;
+}
+
+.cotainer p {
+    color: black;
+}
+
+.motion_name_en {
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.motion_name_ja {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.form_style {
+    display: flex;
+    align-items: center;
+}
+
+.form_style  input {
+    width: 50px;
+    text-align: center;
+    margin-right: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.carory_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carory_image {
+    background-image: url(../images/icon_log_caloly.svg);
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+
+.button {
+    background-image: url(../images/icon_button.png);
+    background-size: 32px;
+    background-position: 30px center;
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 3;
+    position: relative;
+    opacity: 0.9;
+    border:  1px solid black;
+    transition: .5s;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button:hover {
+    transition: .5s;
+    filter: brightness(70%);
+    width: 201px;
+    height: 41px;
+}
+
+/* 入力完了後 */
+.display_none {
+    display: none;
+}
+
+.form_finish {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}
+
+.display_box {
+    width: 400px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 101;
+    position: relative;
+    margin: auto;
+    margin-top:150px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.display_box img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;   
+}
+
+
+.form_complete {
+    font-size: 30px;
+}
+
+.view_status {
+    text-align: center;
+    display: block;
+    width: 240px;
+    font-size: 15px;
+    color: black;
+    background-color: gray;
+    opacity: 0.8;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 7px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Vision</title>
+        <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="images/health_vision_icon.png">
+        <!-- リセットCSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Philosopher&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- オリジナルCSS -->
+        <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- フォーム入力が完了し、buttonをクリックしたら入力完了画面を表示 通常時は非表示-->
+    <div class="form_finish display_none">
+        <div class="display_box">
+            <div class="form_flex">
+                <img src="images/icon_check.png" alt="">
+                <p class="font_english form_complete">Form Complete!</p>
+            </div>
+            <a href="home.html" class="view_status">View Your Status</a>
+        </div>
+    </div>
+    <!-- フッター画面 -->
+    <footer>
+        <div class="fotter">
+            <div class="logo">
+                <div class="health_vision"></div>
+                <a href="home.html" class="font_english">Health Vision</a> 
+            </div>
+            <a href="home.html" class="home_logo"></a>
+        </div>
+    </footer>
+    <!-- メイン画面 -->
+    <main class="index_back">
+        <div class="page_exprotion">
+            <p class="font_english page_title">Input Form  <span>入力フォーム</span></p>
+        </div>
+        <div class="filter"></div>
+        <!-- フォーム画面 -->
+        <form action="../app.rb" method="post">                                                 <!--formタグはここにあります.送信先は、aap.rbで指定-->
+            <div class="flexbox">
+                <!-- 腕立て回数の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_arm_push.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">ARMPUSH</p>
+                    <p class="font_japanese motion_name_ja">腕立</p> 
+                    <div class="form_style">
+                        <input type="text" placeholder="0" name="motion[1]"> <span>回</span>       <!--腕立ての運動回数はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">1 kcal</p>
+                    </div>
+                </div>
+                <!-- 腹筋回数の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_abdominal.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">ABDOMINL</p>
+                    <p class="font_japanese motion_name_ja">腹筋</p>
+                    <div class="form_style">
+                        <input class="form_style" type="text" placeholder="0" name="motion[2]"> <span>回</span>      <!--腹筋の運動回数はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">1 kcal</p>
+                    </div>
+                </div>
+                <!-- スクワット回数の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_squat.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">SQUAT</p> 
+                    <p class="font_japanese motion_name_ja">スクワット</p>
+                    <div class="form_style">
+                        <input type="text" placeholder="0" name="motion[3]"> <span>回</span>     <!--スクワットの運動回数はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">1 kcal</p>
+                    </div>
+                </div>
+                <!-- 徒歩時間の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_working.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">WALKING</p>
+                    <p class="font_japanese motion_name_ja">徒歩</p>    
+                    <div class="form_style">
+                        <input type="text" placeholder="0" name="motion[4]"> <span>分</span>     <!--徒歩の時間はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">5 kcal</p>
+                    </div>
+                </div>
+                <!-- ランニング時間の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_runnnig.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">RUNNNING</p>
+                    <p class="font_japanese motion_name_ja">走る</p>
+                    <div class="form_style">
+                        <input type="text" placeholder="0" name="motion[5]"> <span>分</span>    <!--ランニングの時間はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">10 kcal</p>
+                    </div>
+                </div>
+                <!-- 水泳時間の入力画面 -->
+                <div class="cotainer">
+                    <div class="circle">
+                        <img src="images/icon_motion_swiming.png" alt="">
+                    </div>
+                    <p class="font_english motion_name_en">SWIMINNG</p>
+                    <p class="font_japanese motion_name_ja">水泳</p>
+                    <div class="form_style">
+                        <input type="text" placeholder="0" name="motion[6]"> <span>分</span>  <!--水泳の時間はここで入力します-->
+                    </div>
+                    <div class="carory_detail">
+                        <div class="carory_image font_english"></div>
+                        <p class="font_english">20 kcal</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ボタン -->
+            <button class="button font_english" type="submit">Button</button>
+        </form>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
