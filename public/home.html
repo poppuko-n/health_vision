@@ -19,6 +19,59 @@
 </head>
 
 <body>
+     <!-- バッジの説明、buttonをクリックしたら入力完了画面を表示 通常時は非表示-->
+    <div class="budge form_finish display_none">
+        <div class="budge_box">
+            <p class="font_english budge_title">Budge Exprotion</p>
+            <p class="font_japanese budge_subtitle">バッジ説明</p>
+            <div class="budge_flex">
+                <div class="budge_container">
+                    <img src="images/budge_pawn.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">Pawn</p>
+                        <p class="font_english budge_day">継続日数：0日</p>
+                    </div>
+                </div>
+                <div class="budge_container">
+                    <img src="images/budge_knght.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">Knight</p>
+                        <p class="font_english budge_day">継続日数：1日</p>
+                    </div>
+                </div>
+                <div class="budge_container">
+                    <img src="images/budge_bishop.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">Bishop</p>
+                        <p class="font_english budge_day">継続日数：3日</p>
+                    </div>
+                </div>
+                <div class="budge_container">
+                    <img src="images/budge_rook.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">Rook</p>
+                        <p class="font_english budge_day">継続日数：5日</p>
+                    </div>
+                </div>
+                <div class="budge_container">
+                    <img src="images/budge_queen.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">Queen</p>
+                        <p class="font_english budge_day">継続日数：7日</p>
+                    </div>
+                </div>
+                <div class="budge_container">
+                    <img src="images/budge_king.png" alt="">
+                    <div class="budge_exprotion">
+                        <p class="font_english budge_name">King</p>
+                        <p class="font_english budge_day">継続日数：14日</p>
+                    </div>
+                </div>
+            </div>
+            <button class="budge_close">Close</button>
+        </div>
+    </div>
+
     <footer>
         <div class="fotter">
             <div class="logo">
@@ -34,7 +87,50 @@
             <p class="font_english page_title">Progress Status <span>達成状況</span></p>
         </div>
         <div class="filter"></div>
-       
+
+       <div class="home_flexbox">
+            <div class="status">
+                <div class="status_title">
+                    <img src="images/icon_goal.png" alt="">
+                    <p class="font_japanese">達成状況</p>
+                </div>
+                <div id="border"></div>
+                <div class="status_display">
+                    <p class="font_english completion_rate">90<span>%</span></p>
+                    <p class="font_english calories_burn">1800<span>kcl</span><span>/</span>2000<span>kcl</span></p>
+                </div>
+            </div>
+            <div class="status_flex">
+                <div class="motion_day">
+                    <div class="status_title">
+                        <img src="images/icon_log_caloly.svg" alt="">
+                        <p class="font_japanese">継続日数</p>
+                    </div>
+                    <p class="font_english days" id="motion_day">14<span>DAY</span></p>
+                </div>
+                <div class="budge_display">
+                    <div class="status_title">
+                        <img src="images/icon_log_dunble.png" alt="">
+                        <p class="font_japanese">バッヂ</p>
+                        <img src="images/icon_help.png" alt="" class="budge_detail">
+                    </div>
+                    <div id="bd_detail">
+                        <img src="images/budge_pawn.png" alt="" id="budge_display">
+                        <p class="font_english" id="budge_name">Pawn</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="comment">
+                <div class="status_title">
+                    <img src="images/icon_comment.png" alt="">
+                    <p class="font_japanese">コメント</p>
+                </div>
+                <p class="font_japanese comment_display" id="comment"></p>
+            </div>
+       </div>
     </main>
+    <script src="js/app.js"></script>
 </body>
 </html>

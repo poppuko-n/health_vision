@@ -118,7 +118,7 @@
     position: absolute;
     width: 100%;
     height: 728px;
-    opacity: .2;
+    opacity: .4;
     z-index: 1;
 } 
 
@@ -128,11 +128,11 @@
     padding: 5px;
     background-color: white;
     opacity: .8;
-    top: 50px;
+    top: 20px;
     left: 0;
     margin-left: 10px;
     position: absolute;
-    border-left: 6px solid grey;
+    border-left: 6px solid red;
     z-index: 3;
 }
 
@@ -273,12 +273,12 @@ form {
     align-items: center;
 }
 
-button:hover {
+/* button:hover {
     transition: .5s;
     filter: brightness(70%);
     width: 201px;
     height: 41px;
-}
+} */
 
 /* 入力完了後 */
 .display_none {
@@ -337,4 +337,227 @@ button:hover {
     border-radius: 10px;
     text-decoration: none;
     padding: 7px;
+}
+
+
+/* バッジ説明 */
+.budge {
+    width: 100%!important;
+    height: 100vh!important;
+}
+
+.budge_box {
+    width: 400px;
+    height: 540px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 101;
+    position: relative;
+    margin: auto;
+    margin-top:150px;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.budge_title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.budge_subtitle {
+    font-size: 15px;
+    text-align: center;
+    color: gray;
+}
+
+.budge_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.budge_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.budge_container img {
+    width: 45px;
+    margin-right: 15px;
+}
+
+.budge_exprotion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+}
+
+.budge_name {
+    font-size: 21px;
+}
+
+
+.budge_day {
+    font-size: 15px;
+}
+
+.budge_close {
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    background-color:grey;
+    border-radius: 10px;
+    padding: 4px 10px 4px 10px;
+    margin-left: 300px;
+    transition: .5s;
+}
+
+.budge_close:hover {
+    background-color: black;
+    color: white;
+    transition: .5;
+} 
+
+/* ホーム画面 */
+.home_flexbox {
+    border: 2px solid white;
+    background-color: white;
+    opacity: 0.8;
+    height: 670px;
+    width: 720px;
+    margin-top: 10px;
+    right: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+    padding: 10px;
+}
+
+.status_title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.status_title img {
+    width: 34px;
+    margin-right: 10px;
+    padding: 4px;
+}
+
+.status_flex {
+    display: flex;
+    height: 30%;
+}
+
+.status {
+    height: 40%;
+}
+
+/* ---------------------------------------------- */
+#border {
+    width: 600px;
+    height: 40px;
+    border: 1px solid black;
+    background-image: url(../images/icon_border_red.jpg);
+    background-size: 540px;
+    opacity: 0.9;
+    margin: 30px auto 10px ;
+}
+
+.completion_rate {
+    font-size: 40px;
+    width: 50%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.completion_rate span {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.calories_burn {
+    font-size: 40px;
+    margin-right: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.calories_burn span {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.status_display {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ---------------------------------------------- */
+
+
+.motion_day {
+    width: 48%;
+    border-right : .5px black solid;
+}
+
+.days {
+    font-size: 45px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.days span {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.budge.display {
+    width: 48%;
+}
+
+#bd_detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left:130px;
+}
+
+#budge_display {
+    width: 70px;
+}
+
+#budge_name{
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.comment {
+    height: 30%;
+}
+
+.budge_detail {
+     width: 24px!important;
+     cursor: pointer;
+     transition: .5s;
+     display: inline-block;
+}
+
+.budge_detail:hover {
+    width: 30px!important;
+    transition: .5s;
+
+}
+
+.comment_display {
+    font-size: 18px;
+    padding: 10px;
 }
