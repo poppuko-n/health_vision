@@ -39,14 +39,15 @@
 ```plaintext
 health_vision/
 ├── app.rb                    # RubyでWEBrickサーバーを建てる、DBを操作
-├── public/                   # フロントを格納
+├── public/                   # 静的フロントを格納
 │   ├── css/                  # CSSファイルを格納
 │   │   └── styles.css
 │   ├── js/                   # JavaScriptファイルを格納
-│   │   └── app.js            # クライアントサイドのJavaScript
+│   │   └── app.js            
 │   ├── images/               # 画像ファイルを格納
-│   ├── home.html             # 達成状況を表示するHTML
 │   ├── form.html             # フォーム画面を表示するHTML
+├── view/                     # 動的フロントを格納
+│   ├── home.html             # 達成状況を表示するHTML
 ├── db/                       # データベース関連ファイルを格納
 │   └── setup.sql             # データベースのセットアップ用SQL
 └── README.md                 # プロジェクト説明
