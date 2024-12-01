@@ -1,6 +1,5 @@
 require 'webrick'
 require 'mysql2'
-require 'cgi'
 require 'erb'
 
 # MySQLクライアント
@@ -40,8 +39,6 @@ else
   @continue_motion = 0
 end
 
-puts @continue_motion
-
 # 消費カロリーを表示
 output = %q{
 SELECT
@@ -59,6 +56,50 @@ WHERE
 resulet_calories = client.query(output)
 @week_calories = resulet_calories.first['week_calories']
 
-puts @week_calories
+
+# webサーバーを作成
+srv = WEBrick::HTTPServer.new({ :DocumentRoot => './public',
+                                :BindAddress => '127.0.0.1',
+                                :Port => 20080})
+
+srv.mount('/form.html', WEBrick::HTTPServlet::FileHandler, './public/form.html')
+srv.mount('/home.html', WEBrick::HTTPServlet::FileHandler, './public/home.html')
 
 
+# デバッグ
+# srv.mount_proc('/app.rb') do |req, res|
+#   if req.request_method == 'POST'
+#     puts "リクエストデータ: #{req.query.inspect}"
+#     res.body = "<html><body><h1>データを受け取りました</h1><a href='/form.html'>戻る</a></body></html>"
+#   else
+#     res.body = "<html><body><h1>無効なリクエストです</h1></body></html>"
+#   end
+# end
+
+srv.mount_proc('/app.rb') do |req, res|
+  if req.request_method == 'POST'
+    # フォームデータを取得
+    form_data = req.query
+    
+    # 現在の日付を取得
+    today_date = Date.today
+
+    # 各運動のデータをデータベースに登録
+    form_data.each do |motion_id, count|
+      next if count.to_i <= 0 # 回数が0以下なら無視
+
+      # データを挿入
+      client.query("INSERT INTO motion_logs (count, motion_date, motion_id) VALUES (#{count.to_i}, '#{today_date}', #{motion_id.to_i})")
+    end
+
+    # レスポンス
+    res['Content-Type'] = 'text/html'
+    res.body = File.read('./public/req.html')
+
+    else
+    res.body = "form.htmlより送信してください"
+  end
+end
+
+trap("INT"){ srv.shutdown }
+srv.start
