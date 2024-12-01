@@ -97,7 +97,7 @@
                 <div id="border"></div>
                 <div class="status_display">
                     <p class="font_english completion_rate">90<span>%</span></p>
-                    <p class="font_english calories_burn">1800<span>kcl</span><span>/</span>2000<span>kcl</span></p>
+                    <p class="font_english calories_burn"><%= @week_calories %><span>kcl</span><span>/</span>2000<span>kcl</span></p>
                 </div>
             </div>
             <div class="status_flex">
@@ -106,7 +106,7 @@
                         <img src="images/icon_log_caloly.svg" alt="">
                         <p class="font_japanese">継続日数</p>
                     </div>
-                    <p class="font_english days" id="motion_day"><span>DAY</span></p>
+                    <p class="font_english days" id="motion_day"><%= @continue_motion %><span>DAY</span></p>
                 </div>
                 <div class="budge_display">
                     <div class="status_title">
@@ -119,9 +119,7 @@
                         <p class="font_english" id="budge_name">Pawn</p>
                     </div>
                 </div>
-
             </div>
-
             <div class="comment">
                 <div class="status_title">
                     <img src="images/icon_comment.png" alt="">

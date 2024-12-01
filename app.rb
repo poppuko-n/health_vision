@@ -56,26 +56,21 @@ WHERE
 resulet_calories = client.query(output)
 @week_calories = resulet_calories.first['week_calories']
 
-
 # webサーバーを作成
 srv = WEBrick::HTTPServer.new({ :DocumentRoot => './public',
                                 :BindAddress => '127.0.0.1',
                                 :Port => 20080})
 
 srv.mount('/form.html', WEBrick::HTTPServlet::FileHandler, './public/form.html')
-srv.mount('/home.html', WEBrick::HTTPServlet::FileHandler, './public/home.html')
 
+# 動的ファイルの実装
+srv.mount_proc('/home') do |req, res|
+  template = ERB.new(File.read('./view/home.erb'))
+  res.body = template.result(binding)
+  res['Content-Type'] = 'text/html'
+end
 
-# デバッグ
-# srv.mount_proc('/app.rb') do |req, res|
-#   if req.request_method == 'POST'
-#     puts "リクエストデータ: #{req.query.inspect}"
-#     res.body = "<html><body><h1>データを受け取りました</h1><a href='/form.html'>戻る</a></body></html>"
-#   else
-#     res.body = "<html><body><h1>無効なリクエストです</h1></body></html>"
-#   end
-# end
-
+# 入力データを運動履歴に登録
 srv.mount_proc('/app.rb') do |req, res|
   if req.request_method == 'POST'
     # フォームデータを取得
@@ -100,6 +95,16 @@ srv.mount_proc('/app.rb') do |req, res|
     res.body = "form.htmlより送信してください"
   end
 end
+
+# デバッグ
+# srv.mount_proc('/app.rb') do |req, res|
+#   if req.request_method == 'POST'
+#     puts "リクエストデータ: #{req.query.inspect}"
+#     res.body = "<html><body><h1>データを受け取りました</h1><a href='/form.html'>戻る</a></body></html>"
+#   else
+#     res.body = "<html><body><h1>無効なリクエストです</h1></body></html>"
+#   end
+# end
 
 trap("INT"){ srv.shutdown }
 srv.start
