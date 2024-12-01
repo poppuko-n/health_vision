@@ -79,24 +79,15 @@ end
 # 入力データを運動履歴に登録
 srv.mount_proc('/app.rb') do |req, res|
   if req.request_method == 'POST'
-    # フォームデータを取得
     form_data = req.query
-    
-    # 現在の日付を取得
     today_date = Date.today
-
-    # 各運動のデータをデータベースに登録
     form_data.each do |motion_id, count|
-      next if count.to_i <= 0 # 回数が0以下なら無視
-
-      # データを挿入
+      next if count.to_i <= 0 
       client.query("INSERT INTO motion_logs (count, motion_date, motion_id) VALUES (#{count.to_i}, '#{today_date}', #{motion_id.to_i})")
     end
-
-    # レスポンス
+    #レスポンス
     res['Content-Type'] = 'text/html'
     res.body = File.read('./public/req.html')
-
     else
     res.body = "form.htmlより送信してください"
   end
