@@ -1,12 +1,4 @@
 
-// buttonが押された時
-// const button = document.querySelector('.button');
-// const formFinish = document.querySelector('.form_finish');
-
-// button.addEventListener('click', function () {
-//     formFinish.style.display = 'block';
-// });
-
 //budge_detailが押された時
 const budgeDetail = document.querySelector('.budge_detail');
 const budge = document.querySelector('.budge');
@@ -69,3 +61,27 @@ let comment_array = ['ゆっくりしたペースでのウォーキングは、�
 let randomIndex = Math.floor(Math.random() * comment_array.length);
 comment.textContent = comment_array[randomIndex];
 
+// 達成割合を表示
+const completionRate = document.querySelector('.completion_rate');
+const caloriesBurn = document.querySelector('.calories_burn');
+
+const caloriesText = caloriesBurn.textContent.split('kcl')[0];
+const calories = parseFloat(caloriesText);
+
+const goalCalories = 2000;
+const rate = (calories / goalCalories) * 100;
+
+if (rate == 0) {
+    completionRate.textContent = '0%'; 
+} else if(rate >= 100){
+    completionRate.textContent = '100%'; 
+}else {
+    completionRate.textContent = `${rate.toFixed(1)}%`;
+}
+
+// グラフの長さを更新
+const border = document.querySelector('#border');
+const completionRateValue = parseFloat(completionRate.textContent);
+const length = 600 * (completionRateValue / 100);
+
+border.style.backgroundSize = `${length}px`;
