@@ -463,7 +463,7 @@ form {
     height: 40px;
     border: 1px solid black;
     background-image: url(../images/icon_border_red.jpg);
-    background-size: 540px;
+    background-size: 0px;
     opacity: 0.9;
     margin: 30px auto 10px ;
 }
